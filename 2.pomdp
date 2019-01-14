@@ -1,0 +1,103 @@
+discount: 0.99
+values: reward
+states: nots0_nots1 nots0_s1 s0_nots1 s0_s1 term
+actions: express_s0 express_s1 confirm_s0 confirm_s1  terminate
+observations: pos neg na
+
+start: uniform
+
+T: express_s0
+0.1 0.0 0.9 0.0 0.0
+0.0 0.1 0.0 0.9 0.0
+0.0 0.0 1.0 0.0 0.0
+0.0 0.0 0.0 1.0 0.0
+0.0 0.0 0.0 0.0 1.0
+
+T: express_s1
+0.82 0.18 0.0 0.0 0.0
+0.0 1.0 0.0 0.0 0.0
+0.0 0.0 0.1 0.9 0.0
+0.0 0.0 0.0 1.0 0.0
+0.0 0.0 0.0 0.0 1.0
+
+T: confirm_s0
+1.0 0.0 0.0 0.0 0.0
+0.0 1.0 0.0 0.0 0.0
+0.0 0.0 1.0 0.0 0.0
+0.0 0.0 0.0 1.0 0.0
+0.0 0.0 0.0 0.0 1.0
+
+T: confirm_s1
+1.0 0.0 0.0 0.0 0.0
+0.0 1.0 0.0 0.0 0.0
+0.0 0.0 1.0 0.0 0.0
+0.0 0.0 0.0 1.0 0.0
+0.0 0.0 0.0 0.0 1.0
+
+T: terminate
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+0.0 0.0 0.0 0.0 1.0
+
+O: express_s0 
+0.1 0.2 0.7
+0.1 0.2 0.7
+0.2 0.1 0.7
+0.2 0.1 0.7
+0.0 0.0 1.0
+
+O: express_s1 
+0.1 0.2 0.7
+0.2 0.1 0.7
+0.1 0.2 0.7
+0.2 0.1 0.7
+0.0 0.0 1.0
+
+O: confirm_s0 
+0.1 0.9 0.0
+0.1 0.9 0.0
+0.9 0.1 0.0
+0.9 0.1 0.0
+0.0 0.0 1.0
+
+O: confirm_s1 
+0.1 0.9 0.0
+0.9 0.1 0.0
+0.1 0.9 0.0
+0.9 0.1 0.0
+0.0 0.0 1.0
+
+O: terminate
+0.0 0.0 1.0
+0.0 0.0 1.0
+0.0 0.0 1.0
+0.0 0.0 1.0
+0.0 0.0 1.0
+
+R: express_s0 : nots0_nots1 : * : * -4.0  
+R: express_s0 : nots0_s1 : * : * -4.0  
+R: express_s0 : s0_nots1 : * : * -4.0  
+R: express_s0 : s0_s1 : * : * -4.0  
+R: express_s0 : term : * : * 0.0
+R: confirm_s0 : nots0_nots1 : * : * -2.0  
+R: confirm_s0 : nots0_s1 : * : * -2.0  
+R: confirm_s0 : s0_nots1 : * : * -2.0  
+R: confirm_s0 : s0_s1 : * : * -2.0  
+R: confirm_s0 : term : * : * 0.0     
+R: express_s1 : nots0_nots1 : * : * -4.0  
+R: express_s1 : nots0_s1 : * : * -4.0  
+R: express_s1 : s0_nots1 : * : * -4.0  
+R: express_s1 : s0_s1 : * : * -4.0  
+R: express_s1 : term : * : * 0.0
+R: confirm_s1 : nots0_nots1 : * : * -2.0  
+R: confirm_s1 : nots0_s1 : * : * -2.0  
+R: confirm_s1 : s0_nots1 : * : * -2.0  
+R: confirm_s1 : s0_s1 : * : * -2.0  
+R: confirm_s1 : term : * : * 0.0  
+R: terminate : nots0_nots1 : term : * -100.0 
+R: terminate : nots0_s1 : term : * -100.0  
+R: terminate : s0_nots1 : term : * -100.0 
+R: terminate : s0_s1 : term : * 100.0  
+R: terminate : term : term : * 0.0 
