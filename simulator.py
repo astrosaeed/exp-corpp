@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from parser import Policy,Solver
 from pomdp_parser import Model
-from termcolor import colored
 import numpy as np
 
 np.set_printoptions(suppress=True)
